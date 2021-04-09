@@ -15,14 +15,27 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
 
-    object {
-      @include fluidSize(25, 250, $propName: "width");
-      @include fluidSize(25, 250, $propName: "height");
+  .subpage-title-container object {
+	width: 25px;
+	height: 25px;
+  }
+
+  .subpage-title-container h1 {
+	font-size: var(--min-h-font-size);
+	padding-left: 18px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .subpage-title-container object {
+      width: 250px;
+	  height: 250px;
     }
-    h1 {
-      @include fluidSize($minHFontSize, $maxHFontSize);
-      @include fluidSize(18, 48, $propName: "padding-left");
-    }
+
+	.subpage-title-container h1 {
+	  font-size: var(--max-h-font-size);
+	  padding-left: 48px;
+	}
   }
 </style>

@@ -80,45 +80,67 @@
 <style lang="scss">
   @import "../style/theme.scss";
 
-  // .screen-hero {
-  //   background: 90% 50% no-repeat url(../assets/badges/acm-blank.svg);
+  /*
+  .screen-hero {
+    background: 90% 50% no-repeat url(../assets/badges/acm-blank.svg);
 
-  //   div {
-  //     @include fluidSize(10, 128, $propName: "margin-left");
-  //     padding-top: 221px;
-  //     min-width: "max-content";
-  //     h1 {
-  //       @include fluidSize($minHFontSize, $maxHFontSize);
-  //       @include fluidSize(
-  //         $minPFontSize,
-  //         $maxPFontSize,
-  //         $propName: "padding-bottom"
-  //       );
-  //       font-weight: bold;
-  //     }
-  //   }
-  // }
+    div {
+      @include fluidSize(10, 128, $propName: "margin-left");
+      padding-top: 221px;
+      min-width: "max-content";
+      h1 {
+        @include fluidSize($minHFontSize, $maxHFontSize);
+        @include fluidSize(
+          $minPFontSize,
+          $maxPFontSize,
+          $propName: "padding-bottom"
+        );
+        font-weight: bold;
+      }
+    }
+  }
+  */
 
   .screen-why-join {
     background: 10% 50% no-repeat url(../assets/badges/acm-blank.svg);
+  }
 
-    div {
-      @include fluidSize(10, 128, $propName: "padding-right");
-      padding-top: 333px;
-      h2 {
-        @include fluidSize($minHFontSize, $maxHFontSizeMed);
-        @include fluidSize(10, 32, $propName: "padding-bottom");
-        font-weight: bold;
-        text-align: right;
-        margin: 0;
-      }
-      p {
-        @include fluidSize($minPFontSize, $maxPFontSize);
-        @include fluidSize(150, 1014, $propName: "width");
-        text-align: right;
-        float: right;
-        margin: 0;
-      }
+  .screen-why-join div {
+    padding-top: 333px;
+    padding-right: 10px;
+  }
+
+  .screen-why-join div h2 {
+    font-size: var(--min-h-font-size);
+    padding-bottom: 10px;
+
+    font-weight: bold;
+    text-align: right;
+    margin: 0;
+  }
+
+  .screen-why-join div p {
+    font-size: var(--min-p-font-size);
+    width: 150px;
+
+    text-align: right;
+    float: right;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .screen-why-join div {
+      padding-right: 128px;
+    }
+
+    .screen-why-join div h2 {
+      font-size: var(--max-h-font-size-med);
+      padding-bottom: 32px;
+    }
+
+    .screen-why-join div p {
+      font-size: var(--max-p-font-size);
+      width: 1014px;
     }
   }
 
@@ -128,61 +150,77 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
 
-    .paths-intro {
-      padding-top: 333px;
-      padding-bottom: 64px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+  .screen-path .paths-intro {
+    padding-top: 333px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-      h2 {
-        margin: 0;
-        @include fluidSize($minHFontSize, $maxHFontSizeMed);
-        @include fluidSize(10, 32, $propName: "padding-bottom");
-        text-align: center;
-        font-weight: bold;
-      }
-      p {
-        @include fluidSize($minPFontSize, $maxPFontSize);
-        @include fluidSize(190, 1310, $propName: "width");
-        @include fluidSize(18, 54, $propName: "line-height");
-        margin: 0;
-        align-content: center;
-        text-align: center;
-      }
-    }
-    .paths-display {
+  .screen-path .paths-intro h2 {
+    margin: 0;
+	font-size: var(--min-p-font-size);
+	padding-bottom: 
+    @include fluidSize($minHFontSize, $maxHFontSizeMed);
+    @include fluidSize(10, 32, $propName: "padding-bottom");
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .screen-path .paths-intro p {
+	  font-size: var(--min-p-font-size);
+	  width: 190px;
+	  line-height: 18px;
+    margin: 0;
+    align-content: center;
+    text-align: center;
+  }
+  
+  .screen-path .paths-display {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
+  }
 
-      .path-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: $acmDark;
-        text-decoration: none;
+  .screen-path .paths-display .path-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $acmDark;
+    text-decoration: none;
 
-        object {
-          @include fluidSize(36, 250, $propName: "width");
-          @include fluidSize(36, 250, $propName: "height");
-        }
-        span {
-          @include fluidSize(18, 36);
-        }
-      }
+  .screen-path .paths-display .path-item object {
+    @include fluidSize(36, 250, $propName: "width");
+    @include fluidSize(36, 250, $propName: "height");
+  }
+  .screen-path .paths-display .path-item span {
+    @include fluidSize(18, 36);
+  }
+
+  @media screen and (max-width: 768px) {
+    .screen-path .paths-intro h2 {
+      font-size: var(--max-h-font-size-med);
+      padding-bottom: 32px;
     }
-    @media screen and (max-width: $breakpoint) {
-      .paths-display {
-        flex-direction: column;
-        .path-item {
-          padding-top: 1em;
-        }
-      }
+
+    .screen-path .paths-intro p {
+      font-size: var(--max-p-font-size);
+      width: 1310px;
+      line-height: 54px;
+    }
+
+    .screen-path .paths-display {
+      flex-direction: column;
+    }
+    
+    .screen-path .paths-display .path-item {
+      padding-top: 1em;
     }
   }
 

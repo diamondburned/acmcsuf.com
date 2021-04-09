@@ -15,52 +15,61 @@
   </div>
 </section>
 
-<style lang="scss">
-  @import "../../style/theme.scss";
-
+<style>
   .screen-wyd {
     background: none;
     padding-bottom: 333px;
 
-    div {
-      @include fluidSize(10, 150, $propName: "padding-left");
-      @include fluidSize(10, 150, $propName: "padding-right");
-      @include fluidSize(
-        $minPFontSize,
-        $maxPFontSize,
-        $propName: "padding-bottom"
-      );
+    --min-padding: 10px;
+  	  --max-padding: 150px;
+  }
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+  .screen-wyd div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-      padding-top: 333px;
+    padding-top: 333px;
+    padding-left: var(--min-padding);
+    padding-right: var(--min-padding);
+    padding-bottom: var(--min-p-font-size);
+  }
 
-      h2 {
-        @include fluidSize($minHFontSize, $maxHFontSizeMed);
-        @include fluidSize(
-          $minPFontSize,
-          $maxPFontSize,
-          $propName: "padding-bottom"
-        );
-        font-weight: bold;
-        margin: 0;
-      }
-      p {
-        @include fluidSize($minPFontSize, $maxPFontSize);
-        @include fluidSize(
-          $minPFontSize,
-          $maxPFontSize,
-          $propName: "padding-bottom"
-        );
-        margin: 0;
+  .screen-wyd h2 {
+    font-weight: bold;
+    font-size: var(--min-h-font-size);
+  }
 
-        span.plus {
-          color: $acmBlue;
-        }
-      }
+  .screen-wyd p {
+    font-size: var(--min-p-font-size);
+  }
+
+  .screen-wyd p,
+  .screen-wyd h2 {
+    padding-bottom: var(--min-p-font-size);
+    margin: 0;
+  }
+
+  .screen-wyd span.plus {
+    color: var(--acm-blue);
+  }
+
+  @media screen and (min-width: 768px) {
+    .screen-wyd div {
+      padding-left: var(--max-padding);
+      padding-right: var(--max-padding);
+      padding-bottom: var(--max-p-font-size);
+    }
+
+    .screen-wyd p {
+      font-size: var(--max-p-font-size);
+      padding-bottom: var(--max-p-font-size);
+    }
+
+    .screen-wyd h2 {
+      font-size: var(--max-h-font-size-med);
+      padding-bottom: var(--max-p-font-size);
     }
   }
 </style>
